@@ -12,7 +12,7 @@ SectorBalance	equ	17
 
 	jmp	short Label_Start
 	nop
-	BS_OEMName	db	'MINEboot'
+	BS_OEMName	db	'BearOS  '
 	BPB_BytesPerSec	dw	512
 	BPB_SecPerClus	db	1
 	BPB_RsvdSecCnt	dw	1

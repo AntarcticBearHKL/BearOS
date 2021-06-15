@@ -1,15 +1,15 @@
-BearOS: Clear Boot.img Loader.bin
-	mount Boot.img /media -t vfat -o loop
-	cp Loader.bin /media
+bearOS: clear diskImage.img loader.bin
+	mount diskImage.img /media -t vfat -o loop
+	cp loader.bin /media
 	sync
 	umount /media
 
-Boot.img:
-	nasm Boot.asm -o Boot.img
+diskImage.img:
+	nasm diskImage.asm -o diskImage.img
 
-Loader.bin:
-	nasm Loader.asm -o Loader.bin
+loader.bin:
+	nasm loader.asm -o loader.bin
 
-Clear:
-	rm Boot.img 
-	rm Loader.bin
+clear:
+	if [ -e diskImage.img ]; then rm diskImage.img; fi
+	if [ -e loader.bin ]; then rm loader.bin; fi
